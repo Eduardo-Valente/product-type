@@ -28,7 +28,7 @@ public class ImportedProduct extends Product {
 				  " (Customs fee: $ " + String.format("%,.2f", this.customsFee) + ")"; 
 		}
 		
-		private Float totalPrice()
+		public Float totalPrice()
 		{
 			return getPrice() + this.customsFee;
 		}

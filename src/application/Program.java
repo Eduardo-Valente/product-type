@@ -43,28 +43,22 @@ public class Program {
 			System.out.println("Product #" + i + " data:");
 			System.out.print("Common, used or imported (c/u/i)? ");
 			option = sc.next().toLowerCase().charAt(0);
+			System.out.print("Name: ");
+	    	sc.nextLine();
+	    	productName = sc.nextLine();
+	    	System.out.print("Price: ");
+	    	productPrice = sc.nextFloat();
 			
 			switch(option)
 			{
 			    case 'c': 
-			    
-			    	System.out.print("Name: ");
-			    	sc.nextLine();
-			    	productName = sc.nextLine();
-			    	System.out.print("Price: ");
-			    	productPrice = sc.nextFloat();
 			    	
 			    	products.add(new Product(productName, productPrice));
 			    	
 			    break;
 			    
 			    case 'u': 
-				    
-			    	System.out.print("Name: ");
-			    	sc.nextLine();
-			    	productName = sc.nextLine();
-			    	System.out.print("Price: ");
-			    	productPrice = sc.nextFloat();
+			    	
 			    	System.out.print("Manufacture date (dd/mm/yyyy): ");
 			    	
 			    	try {
@@ -79,12 +73,7 @@ public class Program {
 			    break;
 			    
 			    case 'i':
-			    	
-			    	System.out.print("Name: ");
-			    	sc.nextLine();
-			    	productName = sc.nextLine();
-			    	System.out.print("Price: ");
-			    	productPrice = sc.nextFloat();
+			 
 			    	System.out.print("Customs fee: ");
 			    	customsFee = sc.nextFloat();
 			    	
