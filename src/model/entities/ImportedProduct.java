@@ -4,9 +4,8 @@ public class ImportedProduct extends Product {
 
 		private Float customsFee;
 
-		public ImportedProduct(Float customsFee) {
+		public ImportedProduct() {
 			super();
-			this.customsFee = customsFee;
 		}
 		
 		public ImportedProduct(String name, Float price, Float customsFee) {
@@ -25,12 +24,12 @@ public class ImportedProduct extends Product {
 		@Override
 		public String priceTag()
 		{
-		   return this.name + " $ " + String.format("%,.2f", totalPrice() ) + 
+		   return getName() + " $ " + String.format("%,.2f", totalPrice() ) + 
 				  " (Customs fee: $ " + String.format("%,.2f", this.customsFee) + ")"; 
 		}
 		
-		public Float totalPrice()
+		private Float totalPrice()
 		{
-			return this.price + this.customsFee;
+			return getPrice() + this.customsFee;
 		}
 }

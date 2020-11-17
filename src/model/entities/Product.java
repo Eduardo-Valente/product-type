@@ -2,8 +2,8 @@ package model.entities;
 
 public class Product {
 		
-		protected String name;
-		protected Float price;
+		private String name;
+		private Float price;
 		
 		public Product() {}
 		
