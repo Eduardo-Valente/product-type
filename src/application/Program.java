@@ -24,7 +24,7 @@ public class Program {
 		
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
-		SimpleDateFormat sdf = new SimpleDateFormat("DD/mm/yyyy");
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/mm/yyyy");
 		
 		List<Product> products = new ArrayList<>();
 		
@@ -33,7 +33,7 @@ public class Program {
 		String productName;
 		Float productPrice, customsFee;
 		
-		Date manufactureDate = new Date();
+		Date manufactureDate = null;
 		
 		System.out.print("Enter the number of products: ");
 		numberOfProducts = sc.nextInt();
@@ -65,17 +65,16 @@ public class Program {
 			    	productName = sc.nextLine();
 			    	System.out.print("Price: ");
 			    	productPrice = sc.nextFloat();
-			    	System.out.print("Manufacture date (DD/MM/YYYY): ");
+			    	System.out.print("Manufacture date (dd/mm/yyyy): ");
 			    	
 			    	try {
 			    		manufactureDate = sdf.parse(sc.next());
+			    		products.add(new UsedProduct(productName, productPrice, manufactureDate) );
 			    	}
 			    	catch(ParseException pe)
 			    	{
-			    		System.out.println("Please enter a valid date.");
-			    	}
-			    	
-			    	products.add(new UsedProduct(productName, productPrice, manufactureDate) );
+			    		System.out.println("Please enter a valid date next time.");
+			    	}	
 			    	
 			    break;
 			    
@@ -95,7 +94,7 @@ public class Program {
 			    
 			    default: 
 			    	
-			    	System.out.println("Please, choose one of the options available.");
+			    	System.out.println("Please, choose one of the options available next time.");
 			    
 			    break;
 			}
