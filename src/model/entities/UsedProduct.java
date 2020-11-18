@@ -6,7 +6,7 @@ import java.util.Date;
 public class UsedProduct extends Product {
 			
 			private Date manufacturedDate;
-			private final SimpleDateFormat sdf = new SimpleDateFormat("dd/mm/yyyy");
+			private final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
 			public UsedProduct() {
 				super();
